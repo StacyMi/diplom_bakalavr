@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Authorization</title>
+    <link type="text/css" rel="stylesheet" href="st_auth_in.css">
+    <script type="text/javascript" src="http://109.202.0.226/adapter-web/js/jquery-1.8.0.min.js"></script>
+    <script>
+      function auth_in() {
+        var user = $("#user").val();
+        var pswd = $("#pass").val();
+        if ((user != "") && (pswd != "")) {
+          $.ajax({
+            url:"http://localhost:8081/test/auth_in?username="+user+"&password="+pswd,
+            method:"GET",
+            success: function(data) {
+              if(data.successful == true) {
+                alert("Пользователь успешно добавлен!");
+                $(".container").hide();
+                //отрисовывается форма проекта
+                window.location.replace("auth.html");
+              } else  {
+                alert("Пользователь с такими данными уже существует!");
+              }
+            },
+            error: function() {
+              alert("Сервис не доступен!");
+            }
+          });
+        } else {
+          alert("Заполните обязательные поля: UserName, Password!");
+        }
+      }
+
+
+      $(document).ready(function() {
+        $("#send_out").click(function() {
+          auth_in();
+          //alert("Нажата клавиша АВТОРИЗАЦИИ!");
+        });
+        $("#send_Cancel").click(function() {
+          window.location.replace("auth.html");
+          //alert("Нажата клавиша ВЫХОДА!");
+        });
+
+        $('#age').keyup( function(){
+          var $this = $(this);
+          if (isNaN($this.val())) {
+            alert( "Введено не числовое значение!" );
+            $this.val($this.val().substr(0, $this.val().length - 1));
+          } else {
+            //alert( "Число" );
+          }
+          if($this.val().length > 3) {
+            alert('Максимльно вводимая длинна: ' + 3);
+            $this.val($this.val().substr(0, 3));
+          }
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Регистрация<small>Заполните поля для регистрации</small></h1>
+    <div class="form">
+      <div class="forceColor"></div>
+
+      <div class="topbar">
+        <div class="spanColor"></div>
+        <input class="input" id="user" placeholder="UserName"/>
+      </div>
+
+      <div class="topbar">
+        <div class="spanColor"></div>
+        <input class="input" placeholder="UserLastName"/>
+      </div>
+
+      <div class="topbar">
+        <div class="spanColor"></div>
+        <input class="input" id="age" placeholder="Age"/>
+      </div>
+
+      <div class="topbar">
+        <div class="spanColor"></div>
+        <input type="password" class="input" id="pass" placeholder="Password"/>
+      </div>
+
+      <button class="send" id="send_out" >Registration</button>
+      <p/>
+      <button class="send" id="send_Cancel" >Cancel</button>
+
+    </div>
+
+  </body>
+</html>

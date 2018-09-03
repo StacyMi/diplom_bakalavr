@@ -1,0 +1,292 @@
+body {
+  /*background:#202020;
+  font:bold 12px Arial, Helvetica, sans-serif;
+  margin:0;
+  padding:0;
+  min-width:960px;
+  color:#bbbbbb;
+  */
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-family: Raleway;
+  background: url(images/city-wallpaper-18.jpg);
+  background-size: cover;
+  background-position: 50%;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+h1 {
+	font: 4em normal Arial, Helvetica, sans-serif;
+	padding: 10px;	margin: 0;
+	text-align:right;
+}
+
+h1 small{
+	font: 0.2em normal  Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+  letter-spacing: 0.2em;
+  line-height: 5em;
+	display: block;
+}
+
+.tabs {
+
+  list-style-type: none;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  width:1000px;
+  position: absolute;
+
+
+}
+.tabs li {
+  float: left;
+}
+.tabs li > input {
+  display: none;
+}
+.tabs li > label {
+	width:200px;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-right:20px;
+	border-radius:5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.tabs li > label:hover {
+  border-bottom: 2px solid black;
+}
+.tabs li > input:checked + label {
+  border-bottom: 3px solid black;
+}
+a {
+  margin-left: 50%;
+  width:200px;
+	padding-top:10px;
+  padding-left: 10px;
+  padding-right: 10px;
+	padding-bottom:10px;
+	border-radius:5px;
+  text-align: center;
+  color: black;
+  font-size: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  border: 2px solid white;
+}
+/*обязательные поля input*/
+input:required:invalid {
+	border:1px solid #4f4f4f;
+  background: #363636;
+  color:white;
+}
+/*обязательные поля select*/
+select:required:invalid {
+	border:1px solid #4f4f4f;
+  background: #363636;
+  color:white;
+}
+/*рамка при фокусировании на input*/
+input:focus {
+  outline: none;
+  color: black;
+  border: 1px solid white;
+}
+/*рамка при фокусировании на select*/
+select:focus {
+  outline: none;
+  color: black;
+  border: 1px solid white;
+}
+
+.tabs .tab-content {
+
+  opacity: 1; /*Прозрачность*/
+  overflow: auto; /*Прокрутка*/
+  margin-left:auto;
+  margin-right:auto;
+  text-align: left;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100px;
+  border: 0px solid #999;
+  height: 500px;
+  width: 900px;
+  background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+
+.tabs li > input:checked ~ .tab-content {
+  display: block;
+}
+
+.box1 {
+  margin-left:40px;
+  width: 820px;
+  height: 30px;
+  background: #dad7c5 no-repeat;
+  padding: 0 10px;
+  border: none;
+  font-size: 1em;
+  box-shadow:  0 5px 10px -5px #000 inset, 5px 0 10px -5px #000 inset;
+}
+.box2 {
+  margin-left:40px;
+  width: 250px;
+  height: 30px;
+  background: #dad7c5 no-repeat;
+  padding: 0 10px;
+  border: none;
+  font-size: 1em;
+  box-shadow:  0 5px 10px -5px #000 inset, 5px 0 10px -5px #000 inset;
+}
+.box3 {
+  margin: 0 10px;
+  width: 560px;
+  height: 30px;
+  background: #dad7c5 no-repeat;
+  padding: 0 10px;
+  border: none;
+  font-size: 1em;
+  box-shadow:  0 5px 10px -5px #000 inset, 5px 0 10px -5px #000 inset;
+}
+
+.ffile {
+  margin-left:40px;
+  color: white;
+}
+
+
+input.buttonn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  cursor: pointer;
+  width:200px;
+  text-align: center;
+  position: fixed;
+  top: 630px;
+  right: 25%;
+  text-decoration: none;
+}
+input.buttonn:focus {
+  outline: none;
+}
+input.buttonn:hover {
+  color: white;
+  border: 1px solid white;
+}
+input.buttonn.recover {
+  background: #FF2B4B;
+  color: white !important;
+  border: 1px solid white !important;
+  transition: all 400ms linear;
+}
+.buttonH {
+  height:30px;
+  width:30px;
+    border: 0px solid #000;
+    background: url(images/eye.png) 50% 50% no-repeat;
+    background-size: 30px 30px;
+
+}
+.buttonH2 {
+  margin-left:80%;
+  height:50px;
+  width:50px;
+    border: 0px solid #000;
+    background: url(images/save.png) 50% 50% no-repeat;
+    background-size: 50px 50px;
+
+}
+.imgH {
+  height:30px;
+  width:30px;
+    border: 0px solid #000;
+}
+
+.nev{
+  filter:alpha(opacity=0);  /*  для IE 5.5+ */
+  -moz-opacity:0;  /* для Mozilla 1.6 и ниже */
+  -khtml-opacity:0;  /* для Konqueror 3.1, Safari 1.1 */
+  opacity: 0;
+}
+
+.Zag {
+  color: white;
+  text-align: center;
+  font-family:Lobster, cursive;
+  font: 3em normal Arial, Helvetica, sans-serif;
+  padding: 20px;	margin: 0;
+
+}
+.ZagMin {
+  color: white;
+  text-align: center;
+  font-family:Lobster, cursive;
+  font: 2em normal Arial, Helvetica, sans-serif;
+  padding: 20px;	margin: 20;
+}
+.ZagMin2 {
+  color: white;
+  text-align: left;
+  font-family:Lobster, cursive;
+  font: 2em normal Arial, Helvetica, sans-serif;
+  padding: 20px;	margin: 20;
+}
+.pp {
+  margin-left:40px;
+  color: white;
+  font: 0.7 normal  Arial, Helvetica, sans-serif;
+  text-transform:uppercase;
+
+}
+.pp1 {
+  margin-left:40px;
+  color: white;
+  font: 0.7 normal  Arial, Helvetica, sans-serif;
+  text-transform:uppercase;
+
+}
+table {
+  border-radius: 0px;
+  width: 96%;
+  margin-left: 2%;
+}
+.tableZag {
+  text-align: center;
+  color: white;
+  background: #363636;
+  font: 0.7 normal  Arial, Helvetica, sans-serif;
+  text-transform:uppercase;
+}
+.tableStr {
+  text-align: center;
+  color: white;
+  background-color: rgba(105, 105, 105, 0.5);
+  font: 0.7 normal  Arial, Helvetica, sans-serif;
+}

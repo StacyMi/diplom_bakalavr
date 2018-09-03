@@ -1,0 +1,190 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Запрос кадастровой выписки об объекте недвижимости</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="http://109.202.0.226/adapter-web/js/jquery-1.8.0.min.js"></script>
+
+</head>
+	<body novalidate>
+		<h1>SmartCity<small> Запрос кадастровой выписки об объекте недвижимости</small></h1>
+		<ul class = "tabs">
+			<li>
+
+				<input type="radio" name="tabs1" id="tab1" checked>
+				<label for="tab1">Запрос</label>
+				<div class = "tab-content" id="div1" >
+					<form action="#" id="form1">
+
+					<h1 class="Zag">Сведения об организации запрашивающей сведения</h1>
+					<p class="pp">Категория заявителя</p>
+							<select id="mySelect1" class="box1" onchange="change()"></select>
+							<p class="pp" id="p1_1" style="display: none">Иное лицо</p>
+									<input style="display: none" id="1_1" class="box1" placeholder="Категория заявителя" maxlength="255">
+
+
+
+
+					<h1 class="ZagMin">Сведения об органе власти</h1>
+					<p class="pp">Наименование органа власти</p>
+							<input id="2_1" class="box1" maxlength="255" required>
+					<p class="pp">Орган власти</p>
+							<select id="mySelect2" class="box1"></select>
+					<p class="pp">Адрес электронной почты</p>
+							<input id="2_2" class="box1" placeholder="________@_____.___" pattern="^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$" maxlength="255" required>
+					<h1 class="ZagMin">__________</h1>
+					<p class="pp">Регион</p>
+							<select id="mySelect3" class="box1" onchange="change2()"></select>
+							<p class="pp" id="p2_7" style="display: none"></p><input id="2_7" class="box1" maxlength="255" placeholder="Регион" style="display: none">
+							<p class="pp" id="p2_8" style="display: none"></p><input id="2_8" class="box1" maxlength="3" placeholder="Код региона" style="display: none">
+					<p class="pp">Муниципальное образование</p>
+							<select id="mySelect4" class="box2" ></select>
+							<input id="2_3" class="box3" placeholder="Введите название муниципального образования(города)" maxlength="255" required>
+					<p class="pp">Улица</p>
+							<select id="mySelect5" class="box2" ></select>
+							<input id="2_4" class="box3" placeholder="Введите название улицы" maxlength="255" required>
+					<p class="pp">Дом</p>
+							<select id="mySelect6" class="box2" ></select>
+							<input id="2_5" class="box3" placeholder="Введите номер дома" maxlength="10" required>
+					<p class="pp">Номер квартиры</p>
+							<select id="mySelect7" class="box2" ></select>
+							<input id="2_6" class="box3" placeholder="Введите номер квартиры" maxlength="10" required>
+
+
+
+					<h1 class="ZagMin">Информация о заявителе</h1>
+					<p class="pp">Фамилия</p>
+							<input id="3_1_1" class="box1" maxlength="255" required>
+					<p class="pp">Имя</p>
+							<input id="3_1_2" class="box1" maxlength="255" required>
+					<p class="pp">Отчество</p>
+							<input id="3_1_3" class="box1" placeholder="Обязательно, при наличии!" maxlength="255">
+					<p class="pp">Вид документа, удостоверяющего личность</p>
+							<select id="mySelect8" class="box1"></select>
+					<p class="pp">Серия и номер</p>
+							<input id="3_1_4" class="box2" placeholder="Введите серию" maxlength="4" minlength="4" pattern="^\d+$" required>
+							<input id="3_1_5" class="box3" placeholder="Введите номер" maxlength="6" minlength="6" pattern="^\d+$" required>
+					<p class="pp">Дата выдачи документа</p>
+							<input id="3_1_6" type="date" class="box1" onchange="change3()" required>
+					<p class="pp">Наименование органа выдавшего документ</p>
+							<input id="3_1_7" class="box1" maxlength="255" required>
+
+					<h1 class="ZagMin">__________</h1>
+					<p class="pp">Почтовый индекс</p>
+							<input id="3_2_1" class="box1" maxlength="6" minlength="6" pattern="^\d+$" required>
+					<p class="pp">Регион</p>
+							<select id="mySelect9"  onchange="change4()" class="box1"></select>
+							<p class="pp" id="p3_2_s1" style="display: none"></p><input id="3_2_s1" class="box1" maxlength="255" placeholder="Регион" style="display: none">
+							<p class="pp" id="p3_2_s2" style="display: none"></p><input id="3_2_s2" class="box1" maxlength="3" placeholder="Код региона" style="display: none">
+					<p class="pp">Муниципальное образование</p>
+							<select id="mySelect10" class="box2" ></select>
+							<input id="3_2_2" class="box3" placeholder="Введите название муниципального образования(города)" maxlength="255" required>
+					<p class="pp">Улица</p>
+							<select id="mySelect11" class="box2" ></select>
+							<input id="3_2_3" class="box3" placeholder="Введите название улицы" maxlength="255" required>
+					<p class="pp">Дом</p>
+							<select id="mySelect12" class="box2" ></select>
+							<input id="3_2_4" class="box3" placeholder="Введите номер дома" maxlength="10" required>
+					<p class="pp">Корпус</p>
+							<select id="mySelect13" class="box2" ></select>
+							<input id="3_2_5" class="box3" placeholder="Введите номер корпуса" maxlength="10" required>
+					<p class="pp">Строение</p>
+							<select id="mySelect14" class="box2" ></select>
+							<input id="3_2_6" class="box3" placeholder="Введите номер строения" maxlength="10" required>
+					<p class="pp">Квартира</p>
+							<select id="mySelect15" class="box2" ></select>
+							<input id="3_2_7" class="box3" placeholder="Введите номер квартиры" maxlength="10" required>
+
+					<h1 class="ZagMin">__________</h1>
+					<p class="pp">Адрес электронной почты</p>
+							<input id="3_3_1" class="box1" placeholder="________@_____.___" pattern="^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$" maxlength="255" required>
+					<p class="pp">Телефон</p>
+							<input id="3_3_2" class="box1"  value="" type="tel" minlength="9" maxlength="9" placeholder="___-__-__" pattern="\d{3}[-]{1}\d{2}[-]{1}\d{2}"	required>
+					<p class="pp">СНИЛС</p>
+							<input id="3_3_3" placeholder="___-___-___ __" pattern="\d{3}[-]{1}\d{3}[-]{1}\d{3}[ ]{1}\d{2}$" class="box1" minlength="14" maxlength="14" required>
+					<p class="pp">Тип представителя заявителя</p>
+							<select id="mySelect16" class="box1" ></select>
+
+
+
+
+					<h1 class="ZagMin">Блок сведений об объекте запроса</h1>
+					<p class="pp">Pегион месторасположения объекта</p>
+							<select id="mySelect17" class="box1" onchange="change5()"></select>
+							<p class="pp" id="p4_1" style="display: none"></p><input id="4_1" class="box1" maxlength="255" placeholder="Регион" style="display: none">
+							<p class="pp" id="p4_2" style="display: none"></p><input id="4_2" class="box1" maxlength="3" placeholder="Код региона" style="display: none">
+					<p class="pp">Муниципальное образование</p>
+							<select id="mySelect18" class="box2" ></select>
+							<input id="4_3" class="box3" placeholder="Введите название муниципального образования(города)" maxlength="255" required>
+					<p class="pp">Улица</p>
+							<select id="mySelect19" class="box2" ></select>
+							<input id="4_4" class="box3" placeholder="Введите название улицы" maxlength="255" required>
+					<p class="pp">Дом</p>
+							<select id="mySelect20" class="box2" ></select>
+							<input id="4_5" class="box3" placeholder="Введите номер дома" maxlength="10" required>
+					<p class="pp">Номер квартиры</p>
+							<select id="mySelect21" class="box2" ></select>
+							<input id="4_6" class="box3" placeholder="Введите номер квартиры" maxlength="10" required>
+
+
+
+					<h1 class="ZagMin">Сведения о приложенных документах</h1>
+					<p class="pp">Наименование документа</p>
+							<input	id="5_1" class="box1" maxlength="255" required>
+					<p class="pp">Прикрепить файл</p>
+							<input id="5_2" type="file" class="ffile" required>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<h1 class="ZagMin">__________</h1>
+					<input href="#" class="buttonn" type="submit" id="Send" value="Получить ответ">
+				</form>
+				</div>
+
+			</li>
+
+			<li>
+				<input type="radio" name="tabs1" id="tab2">
+				<label for="tab2">Ответ</label>
+				<div class = "tab-content" id="div2">
+				</div>
+			</li>
+
+			<li>
+				<input type="radio" name="tabs1" id="tab3">
+				<label for="tab3">История</label>
+				<div class = "tab-content" id="div3">
+				
+
+
+				<!--<a href="#" class="buttonn" type="button" id="history">Обновить историю</a>-->
+				</div>
+		</li>
+
+		</ul>
+	</body>
+
+<script src="div1_script.js"></script>
+
+</html>

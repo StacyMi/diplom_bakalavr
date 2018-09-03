@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link type="text/css" rel="stylesheet" href="st.css">
+    <script type="text/javascript" src="http://109.202.0.226/adapter-web/js/jquery-1.8.0.min.js"></script>
+    <script>
+      function auth() {
+        var user = $("#username").val();
+        var pswd = $("#password").val();
+        $.ajax({
+          url:"http://localhost:8081/test/auth?username="+user+"&password="+pswd,
+          method:"GET",
+          success: function(data) {
+            if(data.successful == true) {
+              alert("Авторизация произошла успешно!");
+              $(".container").hide();
+              //отрисовывается форма проекта
+              window.location.replace("index.html");
+            } else  {
+              alert("Попробуйте еще раз!");
+            }
+          },
+          error: function() {
+            alert("Сервис не доступен!");
+          }
+
+        });
+      }
+
+      $(document).ready(function() {
+        $("#send").click(function() {
+          auth();
+          //alert("Нажата клавиша ВХОДА!");
+        });
+        $("#send_a").click(function() {
+          window.location.replace("auth_in.html");
+          //alert("Нажата клавиша АВТОРИЗАЦИИ!");
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <h1>SmartCity<small> Запрос кадастровой выписки об объекте недвижимости</small></h1>
+    <div class="form">
+      <div class="forceColor"></div>
+      <div class="topbar">
+        <div class="spanColor"></div>
+        <input class="input" id="username" placeholder="UserName"/>
+      </div>
+      <div class="topbar">
+        <div class="spanColor"></div>
+        <input type="password" class="input" id="password" placeholder="Password"/>
+      </div>
+      <button class="send" id="send" >Login</button>
+      <p/>
+      <button class="send" id="send_a" >Authorization</button>
+    </div>
+
+  </body>
+</html>
